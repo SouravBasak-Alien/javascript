@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>rest countries api</title>
+</head>
+<body>
+	<h1>rest countries api</h1>
+	<div id="countryNameData"></div>
+	<script>
+		fetch("https://restcountries.eu/rest/v2/all")
+		.then(res => res.json())
+		.then(data => {getData(data)})
+		function getData(data) {
+			console.log(data)
+			const countryNameData = document.getElementById("countryNameData");
+			for (let i = 0; i < data.length; i++) {
+				const user = data[i];
+				const countriesName = user.name;
+				const hOne = document.createElement("h3");
+				hOne.innerText = `${"Countrie Name"} ${'='} ${countriesName} `;
+				countryNameData.appendChild(hOne);
+
+				const userCapital = user.capital;
+				const li = document.createElement("li");
+				li.innerText = `${"Country Capital"} ${'='} ${userCapital}`;
+				hOne.appendChild(li)
+
+				
+				const img = document.createElement("a");
+				img.setAttribute("href",user.flag);
+				img.setAttribute("target","_blank");
+				img.innerText = "Country Flag"
+
+				const areaCountry = user.area;
+				const area = document.createElement("li");
+				area.innerText = `${"Country Area"} ${"="} ${areaCountry}`
+
+				const countrySubregion = user.subregion;
+				const subregion = document.createElement("li");
+				subregion.innerText = `${"Country subregion ="} ${countrySubregion}`
+
+
+				const countrylanguages = user.languages[0].name;
+				const languages =document.createElement("li");
+				languages.innerText = `${'Country languages ='} ${countrylanguages}`
+				console.log(countrylanguages)
+				hOne.addEventListener("click",function(){
+					hOne.appendChild(img);
+					hOne.appendChild(area)
+					area.appendChild(subregion)
+					subregion.appendChild(languages)
+				})
+				
+
+			}
+		}
+	</script>
+</body>
+</html>

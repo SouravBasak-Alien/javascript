@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#countryNameData{
+			display: flex;
+			flex-direction: row ;
+			flex-wrap: wrap;
+			
+		}
+		.countryName{
+			width: 430px;
+			border: 1px solid black;
+			text-align: center;
+			color: violet;
+			font-size: 2rem;
+			
+		} 
+	</style>
+</head>
+<body>
+	<h1>rest countries api</h1>
+	<div id="countryNameData"></div>
+	
+	<script>
+		fetch("https://restcountries.eu/rest/v2/all")
+		.then(res => res.json())
+		.then(data => {getData(data)})
+		function getData(data) {
+			const countryNameData = document.getElementById("countryNameData");
+
+			data.forEach(userCountry => {
+				const countriesDiv = document.createElement("div");
+				countriesDiv.className = "countryName"
+				const countriesInfo =`
+					<h3>${userCountry.name}</h3>
+					<p>${userCountry.capital}</p>
+					<a href="${userCountry.flag}" target="blank">${"flag"}</a>
+					<p>${userCountry.area}</p>
+				`
+				countriesDiv.innerHTML = countriesInfo;
+				countryNameData.appendChild(countriesDiv)
+			});
+			// for (let i = 0; i < data.length; i++) {
+			// 	const user = data[i];
+			// 	const countriesDiv= document.createElement("div");
+
+			// 	const countriesInfo =`
+			// 	<h3>${user.name}</h3>
+			// 	<p>${user.capital}</p>
+			// 	<a href="${user.flag}" target="blank">${"flag"}</a>
+			// 	<p>${user.area}</p>
+			// 	`
+			// 	countriesDiv.innerHTML = countriesInfo;
+			// 	countryNameData.appendChild(countriesDiv)
+	
+			// }
+		}
+	</script>
+</body>
+</html>

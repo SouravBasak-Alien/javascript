@@ -10,14 +10,14 @@
 
 //map .......................
 
-// const number = [2,25,4,6,10,8];
+const number = [2,25,4,6,10,8];
 
-// function square (element){
-// 	return element * element;
-// }
-// const squreNum = number.map(square)
+function square (element){
+	return element * element;
+}
+const squreNum = number.map(square)
 
-// console.log(squreNum)
+console.log(squreNum)
 
 
 //another...............
@@ -54,6 +54,6 @@
 //find...............
 
 
- const number = [2,25,4,6,10,8];
- const firstONe = number.find (x => x > 5);
- console.log(firstONe)
+//  const number = [2,25,4,6,10,8];
+//  const firstONe = number.find (x => x > 5);
+//  console.log(firstONe)
