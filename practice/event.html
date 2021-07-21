@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <!-- wrong -->
+    <!-- <h1 onclick="alert('my country')">Bangladesh</h1>
+    <button onclick="console.log('tnx to click me')">Click me</button> -->
+
+
+
+
+        <!-- right -->
+        <h1 onmousemove="addclick()">Bangladesh</h1>
+        <button onclick="addclick()">Click me</button>
+
+
+
+        <h2>Hello world</h2>
+        <button id="first-btn">button1</button>
+        <button id="second-btn">button2</button>
+        <button id="third-btn">button3</button>
+    <script>
+        function addclick(){
+            console.log('you click this item')
+        }
+    </script>
+    <script src="event.js"></script>
+</body>
+</html>

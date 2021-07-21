@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Json js</title>
+</head>
+<body>
+	<h1>Json</h1>
+	<h2>Javascript Object Notation</h2>
+
+
+	<script>
+		const user = {
+			id:245,
+			 name:"neymar",
+			 friendAge:[25,23,21,24], 
+			 friendName:['pele', "silva", "jesus"]
+			};
+			
+
+			//convert string
+			 const userJson = JSON.stringify(user);
+			 console.log(userJson)
+			//  output			
+			//  {"id":245,"name":"neymar","friendAge":[25,23,21,24],"friendName":["pele","silva","jesus"]}
+
+			// ........................................................................
+
+
+			//string to convert parse
+			const userFromJson   = JSON.parse(userJson);
+			console.log(userFromJson);
+			//output
+			//{id: 245, name: "neymar", friendAge: Array(4), friendName: Array(3)}
+
+		
+	</script>
+</body>
+</html>

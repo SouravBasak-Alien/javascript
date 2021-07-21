@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventbubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My site</h1>
+        <ul id="ul">
+            <li id="firstLi">Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit.</li>
+        </ul>
+    </div>
+
+
+
+    <div id="container-two">
+        <h1>My site</h1>
+        <ul id="ul-two">
+            <li id="firstLi-two">Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit.</li>
+        </ul>
+    </div>
+    
+
+
+    <script>
+        document.getElementById('firstLi').addEventListener('click',function(){
+            console.log('this first li')
+
+            // for stop click event
+            event.stopPropagation()
+        })
+        document.getElementById('ul').addEventListener('click',function(){
+            console.log('you click ul')
+           
+        })
+        
+        document.getElementById('container').addEventListener('click',function(){
+            console.log('this div container thats you click')
+        })
+        
+
+        //another
+
+        document.getElementById('container-two').addEventListener('click',function(){
+            console.log('you call container-two')
+            
+        })
+
+        document.getElementById('ul-two').addEventListener('click',function(){
+            console.log('you call ul-two')
+            event.stopPropagation()
+        })
+
+
+        document.getElementById('firstLi-two').addEventListener('click',function(){
+            console.log('you call firstLi-two')
+        })
+
+    </script>
+</body>
+</html>
