@@ -1,24 +1,24 @@
-class Country{
-	constructor(){
-		this.CountryName = "Brazil"
-	}
-}
+// class Country{
+// 	constructor(){
+// 		this.CountryName = "Brazil"
+// 	}
+// }
 
 
-class Player extends Country{
-	constructor(name){
-		super()
-		this.name = name;
-	}
-	getFullInfo(){
-		return this.name + ' ' + this.CountryName
-	}
-}
-const playerOne = new Player("neymar");
-const playerTwo = new Player("pele");
+// class Player extends Country{
+// 	constructor(name){
+// 		super()
+// 		this.name = name;
+// 	}
+// 	getFullInfo(){
+// 		return this.name + ' ' + this.CountryName
+// 	}
+// }
+// const playerOne = new Player("neymar");
+// const playerTwo = new Player("pele");
 
-console.log(playerOne.getFullInfo());
-console.log(playerTwo);
+// console.log(playerOne.getFullInfo());
+// console.log(playerTwo);
 
 
 
@@ -42,3 +42,30 @@ class Space extends Title{
 }
 const hello = new Space("alien");
 console.log(hello.getName())
+
+
+
+
+
+//another ClassInherit
+class Country{
+	constructor(){
+		this.countryName = "Brazil"
+		
+	}
+}
+
+class Player extends Country {
+	constructor(name){
+		super()
+		this.player = name
+		
+	}
+
+
+	getFullInfo(){
+		return this.player + " " + this.countryName
+	}
+}
+const newPlayer = new Player("neymar")
+console.log(newPlayer.getFullInfo())
