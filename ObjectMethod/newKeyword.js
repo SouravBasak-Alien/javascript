@@ -1,12 +1,12 @@
 // new version......................>>>>>>>>>>>>
-class Player{
+class Players{
 	constructor(firstName, lastName, salary){
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.salary = salary;
 	}
 }
-const starPlayer = new Player ("neymar","jr","1500000");
+const starPlayer = new Players ("neymar","jr","1500000");
 console.log(starPlayer)
 
 

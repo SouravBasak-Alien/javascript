@@ -1,12 +1,12 @@
 var word = `chala ja Bhodk nehi tu ehi patakke beep dunga`;
-var count =0;
-for(var i = 0; i<word.length; i++ ){
+var count = 0;
+for (var i = 0; i < word.length; i++) {
     var element = word[i];
-    if(element == " "){
-        count ++;
+    if (element == " ") {
+        count++;
     }
 }
-count ++;
+count++;
 console.log(count);
 
 
