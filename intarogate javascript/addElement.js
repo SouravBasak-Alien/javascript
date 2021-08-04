@@ -1,5 +1,3 @@
-
-
 const Player = document.getElementById('Player');
 
 const newPlayer = document.createElement('li');
